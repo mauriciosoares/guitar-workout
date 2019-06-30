@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/guitar-workout/static/css/main.d259fb41.chunk.css",
+    "main.js": "/guitar-workout/static/js/main.8e7999cf.chunk.js",
+    "main.js.map": "/guitar-workout/static/js/main.8e7999cf.chunk.js.map",
+    "runtime~main.js": "/guitar-workout/static/js/runtime~main.05968900.js",
+    "runtime~main.js.map": "/guitar-workout/static/js/runtime~main.05968900.js.map",
+    "static/css/2.33bc3cad.chunk.css": "/guitar-workout/static/css/2.33bc3cad.chunk.css",
+    "static/js/2.3c3490e6.chunk.js": "/guitar-workout/static/js/2.3c3490e6.chunk.js",
+    "static/js/2.3c3490e6.chunk.js.map": "/guitar-workout/static/js/2.3c3490e6.chunk.js.map",
+    "index.html": "/guitar-workout/index.html",
+    "precache-manifest.f3f950a5853a3cd73b7bc65421532eb8.js": "/guitar-workout/precache-manifest.f3f950a5853a3cd73b7bc65421532eb8.js",
+    "service-worker.js": "/guitar-workout/service-worker.js",
+    "static/css/2.33bc3cad.chunk.css.map": "/guitar-workout/static/css/2.33bc3cad.chunk.css.map",
+    "static/css/main.d259fb41.chunk.css.map": "/guitar-workout/static/css/main.d259fb41.chunk.css.map",
+    "static/media/beep-primary.mp3": "/guitar-workout/static/media/beep-primary.106011f4.mp3",
+    "static/media/beep.mp3": "/guitar-workout/static/media/beep.272df74f.mp3"
+  }
+}
