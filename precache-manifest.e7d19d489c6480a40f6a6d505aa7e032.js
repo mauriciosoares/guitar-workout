@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "a77e436916c5fb77adac33ea959f4aab",
+    "revision": "2b1791f9c4acb1eea956138ac918400f",
     "url": "/guitar-workout/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/guitar-workout/static/css/2.33bc3cad.chunk.css"
   },
   {
-    "revision": "1603676651e8341d2932",
+    "revision": "68097ebb185ec4e9fe81",
     "url": "/guitar-workout/static/css/main.d259fb41.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/guitar-workout/static/js/2.3c3490e6.chunk.js"
   },
   {
-    "revision": "1603676651e8341d2932",
-    "url": "/guitar-workout/static/js/main.8e7999cf.chunk.js"
+    "revision": "68097ebb185ec4e9fe81",
+    "url": "/guitar-workout/static/js/main.892ce994.chunk.js"
   },
   {
     "revision": "8339ed927ba61544258e",
