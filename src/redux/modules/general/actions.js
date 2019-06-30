@@ -1,4 +1,4 @@
-import { actionTypes } from "./constants";
+import { actionTypes } from './constants';
 
 export function openModal({ modal, meta }) {
   return {

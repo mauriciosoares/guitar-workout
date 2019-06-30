@@ -1,8 +1,8 @@
-import set from "lodash/fp/set";
-import flow from "lodash/fp/flow";
-import omit from "lodash/fp/omit";
-import workouts from "../../../mocks/workouts";
-import { actionTypes } from "./constants";
+import set from 'lodash/fp/set';
+import flow from 'lodash/fp/flow';
+import omit from 'lodash/fp/omit';
+import workouts from '../../../mocks/workouts';
+import { actionTypes } from './constants';
 
 const INITIAL_STATE = {
   ids: workouts.map(({ id }) => id),

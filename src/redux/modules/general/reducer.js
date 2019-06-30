@@ -1,6 +1,6 @@
-import set from "lodash/fp/set";
-import flow from "lodash/fp/flow";
-import { actionTypes } from "./constants";
+import set from 'lodash/fp/set';
+import flow from 'lodash/fp/flow';
+import { actionTypes } from './constants';
 
 const INITIAL_STATE = {
   modal: {
@@ -15,15 +15,15 @@ export default function reducer(state = INITIAL_STATE, action) {
       const { modal, meta } = action.payload;
 
       return flow(
-        set("modal.opened", modal),
-        set("modal.meta", meta)
+        set('modal.opened', modal),
+        set('modal.meta', meta)
       )(state);
     }
 
     case actionTypes.CLOSE_MODAL: {
       return flow(
-        set("modal.opened", null),
-        set("modal.meta", null)
+        set('modal.opened', null),
+        set('modal.meta', null)
       )(state);
     }
 

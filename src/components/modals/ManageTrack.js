@@ -1,10 +1,10 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Modal, Form, Input, Button, InputNumber } from "antd";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Modal, Form, Input, Button, InputNumber } from 'antd';
 import {
   createTrack as createTrackAction,
   updateTrack as updateTrackAction
-} from "../../redux/modules/workouts/actions";
+} from '../../redux/modules/workouts/actions';
 
 const formItemLayout = {
   labelCol: {
@@ -69,41 +69,41 @@ class ManageTrack extends React.Component {
       >
         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
           <Form.Item label="Name">
-            {getFieldDecorator("name", {
+            {getFieldDecorator('name', {
               rules: [
                 {
                   required: true,
-                  message: "Please add a name to your new track"
+                  message: 'Please add a name to your new track'
                 }
               ]
             })(<Input />)}
           </Form.Item>
           <Form.Item label="Description">
-            {getFieldDecorator("description")(<Input />)}
+            {getFieldDecorator('description')(<Input />)}
           </Form.Item>
           <Form.Item label="BPM">
-            {getFieldDecorator("bpm", {
+            {getFieldDecorator('bpm', {
               initialValue: 120,
               rules: [
                 {
                   required: true,
-                  message: "Please set the BPM for this track"
+                  message: 'Please set the BPM for this track'
                 }
               ]
-            })(<InputNumber style={{ width: "100%" }} />)}
+            })(<InputNumber style={{ width: '100%' }} />)}
           </Form.Item>
           <Form.Item label="Timer">
-            {getFieldDecorator("timer", {
+            {getFieldDecorator('timer', {
               initialValue: 30,
               rules: [
                 {
                   required: true,
-                  message: "Please set a timer for this track"
+                  message: 'Please set a timer for this track'
                 }
               ]
-            })(<InputNumber style={{ width: "100%" }} />)}
+            })(<InputNumber style={{ width: '100%' }} />)}
           </Form.Item>
-          <button type="submit" style={{ display: "none" }} />
+          <button type="submit" style={{ display: 'none' }} />
         </Form>
       </Modal>
     );
@@ -129,7 +129,7 @@ export default connect(
   actions
 )(
   Form.create({
-    name: "manage-track",
+    name: 'manage-track',
     mapPropsToFields({ track }) {
       if (!track) return {};
 

@@ -1,9 +1,9 @@
-import React from "react";
-import { Route } from "react-router-dom";
-import PopularList from "./pages/PopularList";
-import StarredList from "./pages/PopularList";
-import Workout from "./pages/Workout";
-import * as paths from "./shared/paths";
+import React from 'react';
+import { Route } from 'react-router-dom';
+import PopularList from './pages/PopularList';
+import StarredList from './pages/PopularList';
+import Workout from './pages/Workout';
+import * as paths from './shared/paths';
 
 export default function Router() {
   return (

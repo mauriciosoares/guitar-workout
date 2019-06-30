@@ -1,12 +1,12 @@
-import React from "react";
-import { connect } from "react-redux";
-import { Link, generatePath, matchPath, withRouter } from "react-router-dom";
-import { Layout, Menu, Icon, Typography } from "antd";
-import * as paths from "../../shared/paths";
-import memoize from "lodash/memoize";
-import { openModal as openModalAction } from "../../redux/modules/general/actions";
-import { modals } from "../../shared/constants";
-import { getWorkoutsList } from "../../redux/modules/workouts/selectors";
+import React from 'react';
+import { connect } from 'react-redux';
+import { Link, generatePath, matchPath, withRouter } from 'react-router-dom';
+import { Layout, Menu, Icon, Typography } from 'antd';
+import * as paths from '../../shared/paths';
+import memoize from 'lodash/memoize';
+import { openModal as openModalAction } from '../../redux/modules/general/actions';
+import { modals } from '../../shared/constants';
+import { getWorkoutsList } from '../../redux/modules/workouts/selectors';
 
 const { SubMenu } = Menu;
 const { Sider } = Layout;
@@ -31,11 +31,11 @@ function AppSider({ location, match, openModal, workouts }) {
   return (
     <Sider
       width={200}
-      style={{ background: "#fff", overflowX: "hidden", overflowY: "auto" }}
+      style={{ background: '#fff', overflowX: 'hidden', overflowY: 'auto' }}
     >
       <Menu
         mode="inline"
-        style={{ height: "100%", borderRight: 0 }}
+        style={{ height: '100%', borderRight: 0 }}
         selectedKeys={selectedKeys}
       >
         <SubMenu
@@ -52,7 +52,7 @@ function AppSider({ location, match, openModal, workouts }) {
             return (
               <Menu.Item key={path}>
                 <Link to={path}>
-                  <Text ellipsis style={{ width: "100%" }}>
+                  <Text ellipsis style={{ width: '100%' }}>
                     {workout.name}
                   </Text>
                 </Link>

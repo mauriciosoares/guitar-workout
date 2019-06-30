@@ -1,7 +1,7 @@
-import React from "react";
-import Metronome from "../shared/metronome";
-import { List, Row, Col, Button, Dropdown, Menu, Icon } from "antd";
-import { modals } from "../shared/constants";
+import React from 'react';
+import Metronome from '../shared/metronome';
+import { List, Row, Col, Button, Dropdown, Menu, Icon } from 'antd';
+import { modals } from '../shared/constants';
 
 export default class Track extends React.Component {
   constructor(props) {
@@ -77,13 +77,13 @@ export default class Track extends React.Component {
     const { internalTimer } = this.state;
 
     return (
-      <List.Item style={{ background: "white" }}>
-        <Row type="flex" align="middle" style={{ width: "100%" }}>
+      <List.Item style={{ background: 'white' }}>
+        <Row type="flex" align="middle" style={{ width: '100%' }}>
           <Col span={2}>
             <Button
               shape="round"
               type="primary"
-              icon={isActive ? "pause" : "caret-right"}
+              icon={isActive ? 'pause' : 'caret-right'}
               onClick={isActive ? onPause : onPlay}
             />
           </Col>
@@ -99,7 +99,7 @@ export default class Track extends React.Component {
           </Col>
           <Col span={1} align="right">
             <Dropdown
-              trigger={["click"]}
+              trigger={['click']}
               placement="bottomRight"
               overlay={
                 <Menu>

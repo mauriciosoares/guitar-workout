@@ -1,6 +1,6 @@
-import { actionTypes } from "./constants";
-import uuid from "uuid";
-import { getTracksList } from "./selectors";
+import { actionTypes } from './constants';
+import uuid from 'uuid';
+import { getTracksList } from './selectors';
 
 export function nextWorkout(workoutId, currentTrackId) {
   return (dispatch, getState) => {

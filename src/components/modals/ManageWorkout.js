@@ -1,12 +1,12 @@
-import React from "react";
-import { withRouter, generatePath } from "react-router";
-import { connect } from "react-redux";
-import { Modal, Form, Input, Button } from "antd";
+import React from 'react';
+import { withRouter, generatePath } from 'react-router';
+import { connect } from 'react-redux';
+import { Modal, Form, Input, Button } from 'antd';
 import {
   createWorkout as createWorkoutAction,
   updateWorkout as updateWorkoutAction
-} from "../../redux/modules/workouts/actions";
-import * as paths from "../../shared/paths";
+} from '../../redux/modules/workouts/actions';
+import * as paths from '../../shared/paths';
 
 const formItemLayout = {
   labelCol: {
@@ -56,7 +56,7 @@ class ManageWorkout extends React.Component {
 
     return (
       <Modal
-        title={`${workout ? "Edit" : "Create"} workout`}
+        title={`${workout ? 'Edit' : 'Create'} workout`}
         visible={visible}
         onCancel={closeModal}
         footer={[
@@ -69,25 +69,25 @@ class ManageWorkout extends React.Component {
             disabled={hasErrors(getFieldsError())}
             onClick={this.handleSubmit}
           >
-            {workout ? "Edit" : "Create"}
+            {workout ? 'Edit' : 'Create'}
           </Button>
         ]}
       >
         <Form {...formItemLayout} onSubmit={this.handleSubmit}>
           <Form.Item label="Name">
-            {getFieldDecorator("name", {
+            {getFieldDecorator('name', {
               rules: [
                 {
                   required: true,
-                  message: "Please add a name to your new workout"
+                  message: 'Please add a name to your new workout'
                 }
               ]
             })(<Input />)}
           </Form.Item>
           <Form.Item label="Description">
-            {getFieldDecorator("description")(<Input />)}
+            {getFieldDecorator('description')(<Input />)}
           </Form.Item>
-          <button type="submit" style={{ display: "none" }} />
+          <button type="submit" style={{ display: 'none' }} />
         </Form>
       </Modal>
     );
@@ -114,7 +114,7 @@ export default connect(
   actions
 )(
   Form.create({
-    name: "manage-workout",
+    name: 'manage-workout',
     mapPropsToFields({ workout }) {
       if (!workout) return {};
 

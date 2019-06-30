@@ -1,20 +1,20 @@
-import React from "react";
-import { List, Dropdown, Icon, Menu, Button, Row, Col } from "antd";
-import { reorder, openFullscreen, byId } from "../shared/utils";
-import { DragDropContext, Droppable, Draggable } from "react-beautiful-dnd";
-import { connect } from "react-redux";
-import Track from "../components/Track";
+import React from 'react';
+import { List, Dropdown, Icon, Menu, Button, Row, Col } from 'antd';
+import { reorder, openFullscreen, byId } from '../shared/utils';
+import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
+import { connect } from 'react-redux';
+import Track from '../components/Track';
 import {
   activateWorkout as activateWorkoutAction,
   pauseWorkout as pauseWorkoutAction,
   nextWorkout as nextWorkoutAction,
   reorderTracks as reorderTracksAction,
   deleteTrack as deleteTrackAction
-} from "../redux/modules/workouts/actions";
-import { getTracksList } from "../redux/modules/workouts/selectors";
-import { openModal as openModalAction } from "../redux/modules/general/actions";
-import { modals } from "../shared/constants";
-import { DiscussionEmbed } from "disqus-react";
+} from '../redux/modules/workouts/actions';
+import { getTracksList } from '../redux/modules/workouts/selectors';
+import { openModal as openModalAction } from '../redux/modules/general/actions';
+import { modals } from '../shared/constants';
+import { DiscussionEmbed } from 'disqus-react';
 
 class Workout extends React.Component {
   onDragEnd = result => {
@@ -49,11 +49,11 @@ class Workout extends React.Component {
         <div>
           <Row type="flex" justify="space-between" align="middle">
             <Col span={23}>
-              <h2 style={{ margin: "0" }}>{workout.name}</h2>
+              <h2 style={{ margin: '0' }}>{workout.name}</h2>
             </Col>
             <Col span={1}>
               <Dropdown
-                trigger={["click"]}
+                trigger={['click']}
                 placement="bottomRight"
                 overlay={
                   <Menu>
@@ -72,7 +72,7 @@ class Workout extends React.Component {
                     <Menu.Item
                       onClick={() =>
                         openFullscreen(
-                          document.getElementById("root-container")
+                          document.getElementById('root-container')
                         )
                       }
                     >
@@ -125,7 +125,7 @@ class Workout extends React.Component {
                     </Draggable>
                   ))}
                   {provided.placeholder}
-                  <List.Item style={{ background: "white" }}>
+                  <List.Item style={{ background: 'white' }}>
                     <Button
                       onClick={() =>
                         openModal({

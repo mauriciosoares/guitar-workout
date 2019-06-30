@@ -1,5 +1,5 @@
-import beep from "../assets/sounds/beep.mp3";
-import beepPrimary from "../assets/sounds/beep-primary.mp3";
+import beep from '../assets/sounds/beep.mp3';
+import beepPrimary from '../assets/sounds/beep-primary.mp3';
 
 export default class Metronome {
   constructor({ bpm }) {
