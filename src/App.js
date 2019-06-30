@@ -1,51 +1,38 @@
-import React from 'react';
-import routine from './routine'
-import Track from './components/Track'
+import React from "react";
+import { Layout } from "antd";
+import { BrowserRouter as Router } from "react-router-dom";
+import Header from "./components/app/Header";
+import Sider from "./components/app/Sider";
+import AppRouter from "./Router";
+import Modals from "./components/modals";
 
-class  App extends React.Component {
-  state = {
-    currentTrack: 0,
-    working: false,
-  }
+const { Content } = Layout;
+
+class App extends React.Component {
   render() {
-
-    const {
-      currentTrack,
-      working
-    } = this.state
-
     return (
-      <div>
-        <ul>
-          {routine.map((r, i) => {
-            return (
-            <Track
-              key={i}
-              {...r}
-              active={(currentTrack === i && working)}
-              onActivate={() => {
-                this.setState({
-                  currentTrack: i,
-                  working: true,
-                })
-              }}
-              onFinish={() => {
-                if (!routine[i + 1]) {
-                  this.setState({
-                    currentTrack: 0,
-                    working: false
-                  })
-                } else {
-                  this.setState({
-                    currentTrack: i + 1,
-                  })
-                }
-              }}
-            />
-            )
-          })}
-        </ul>
-      </div>
+      <Router>
+        <Layout className="base-container">
+          <Modals />
+          <Header />
+          <Layout style={{ width: "1024px", margin: "auto" }}>
+            <Sider />
+            <Layout style={{ padding: "0 24px 24px", overflow: "hidden" }}>
+              <Content
+                id="root-container"
+                style={{
+                  background: "#fff",
+                  padding: 24,
+                  margin: 0,
+                  overflow: "auto"
+                }}
+              >
+                <AppRouter />
+              </Content>
+            </Layout>
+          </Layout>
+        </Layout>
+      </Router>
     );
   }
 }

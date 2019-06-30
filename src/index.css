@@ -1,9 +1,11 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+.base-container {
+  height: 100vh;
 }
 
+.draggable .ant-list-item:last-child {
+  border-bottom: 1px solid #e8e8e8 !important;
+}
+
+.draggable:last-child .ant-list-item:last-child {
+  border-bottom: none !important;
+}

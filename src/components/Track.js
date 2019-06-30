@@ -1,67 +1,133 @@
-import React from 'react';
+import React from "react";
+import Metronome from "../shared/metronome";
+import { List, Row, Col, Button, Dropdown, Menu, Icon } from "antd";
+import { modals } from "../shared/constants";
 
 export default class Track extends React.Component {
   constructor(props) {
     super();
 
+    this.metronome = new Metronome({ bpm: props.bpm });
     this.state = {
       internalTimer: props.timer
     };
   }
 
   componentDidMount() {
-    const { active, timer } = this.props
-    if (active) {
+    const { isActive, timer } = this.props;
+    if (isActive) {
       this.setState({
         internalTimer: timer
       });
-      this.setTimer()
+      this.setTimer();
     }
   }
 
   componentDidUpdate(prevProps) {
-    const { active, timer } = this.props
-    if (prevProps.active !== active && active) {
+    const { isActive, timer, bpm } = this.props;
+    if (prevProps.isActive !== isActive && isActive) {
       this.setState({
         internalTimer: timer
       });
-      this.setTimer()
+      this.setTimer();
     }
 
-    if (prevProps.active !== active && !active) {
-      clearInterval(this.interval)
+    if (prevProps.isActive !== isActive && !isActive) {
+      this.metronome.stop();
+      clearInterval(this.interval);
+    }
+
+    if (prevProps.bpm !== bpm) {
+      this.metronome = new Metronome({ bpm: bpm });
     }
   }
 
   setTimer() {
-    const { onFinish } = this.props
+    const { onFinish } = this.props;
 
+    this.metronome.start();
     this.interval = setInterval(() => {
-      const { internalTimer } = this.state
+      const { internalTimer } = this.state;
       if (internalTimer === 1) {
-        onFinish()
-        clearInterval(this.interval)
+        onFinish();
+        this.metronome.stop();
+        clearInterval(this.interval);
       }
 
       this.setState({
         internalTimer: internalTimer - 1
       });
-    }, 1000)
+    }, 1000);
   }
 
   render() {
     const {
-      label,
+      id,
+      name,
+      description,
       bpm,
-      active,
-      onActivate
+      timer,
+      isActive,
+      onPlay,
+      onPause,
+      workoutId,
+      openModal,
+      deleteTrack
     } = this.props;
-    const { internalTimer } = this.state
+    const { internalTimer } = this.state;
 
     return (
-      <li onClick={onActivate}>
-        {label} - {bpm}bpm - {internalTimer}sec ---- {active}
-      </li>
-    )
+      <List.Item style={{ background: "white" }}>
+        <Row type="flex" align="middle" style={{ width: "100%" }}>
+          <Col span={2}>
+            <Button
+              shape="round"
+              type="primary"
+              icon={isActive ? "pause" : "caret-right"}
+              onClick={isActive ? onPause : onPlay}
+            />
+          </Col>
+          <Col span={18}>
+            <div>
+              <b>{name}</b>
+            </div>
+            {description} BPM: {bpm}
+            <br />
+          </Col>
+          <Col span={3} align="right">
+            {timer} / {internalTimer} sec
+          </Col>
+          <Col span={1} align="right">
+            <Dropdown
+              trigger={["click"]}
+              placement="bottomRight"
+              overlay={
+                <Menu>
+                  <Menu.Item
+                    onClick={() =>
+                      openModal({
+                        modal: modals.MANAGE_TRACK,
+                        meta: { workoutId, trackId: id }
+                      })
+                    }
+                  >
+                    <Icon type="edit" />
+                    Edit Track
+                  </Menu.Item>
+
+                  <Menu.Item onClick={() => deleteTrack(workoutId, id)}>
+                    <Icon type="delete" />
+                    Delete Track
+                  </Menu.Item>
+                </Menu>
+              }
+              icon={<Icon type="user" />}
+            >
+              <Button size="small" icon="setting" shape="circle-outline" />
+            </Dropdown>
+          </Col>
+        </Row>
+      </List.Item>
+    );
   }
 }
