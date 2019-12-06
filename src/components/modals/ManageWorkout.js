@@ -51,13 +51,13 @@ class ManageWorkout extends React.Component {
   };
 
   render() {
-    const { closeModal, visible, form, workout } = this.props;
+    const { closeModal, form, workout } = this.props;
     const { getFieldDecorator, getFieldsError } = form;
 
     return (
       <Modal
         title={`${workout ? 'Edit' : 'Create'} workout`}
-        visible={visible}
+        visible
         onCancel={closeModal}
         footer={[
           <Button key="cancel" onClick={closeModal}>

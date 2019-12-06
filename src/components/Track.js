@@ -77,7 +77,7 @@ export default class Track extends React.Component {
     const { internalTimer } = this.state;
 
     return (
-      <List.Item style={{ background: 'white' }}>
+      <List.Item style={{ background: 'white', flexWrap: 'wrap' }}>
         <Row type="flex" align="middle" style={{ width: '100%' }}>
           <Col span={2}>
             <Button
@@ -119,6 +119,17 @@ export default class Track extends React.Component {
                     <Icon type="delete" />
                     Delete Track
                   </Menu.Item>
+                  <Menu.Item
+                    onClick={() =>
+                      openModal({
+                        modal: modals.TRACK_TAB,
+                        meta: { file: '/minor-pentatonic.gp5' }
+                      })
+                    }
+                  >
+                    <Icon type="database" />
+                    Open Tab
+                  </Menu.Item>
                 </Menu>
               }
               icon={<Icon type="user" />}
@@ -126,6 +137,10 @@ export default class Track extends React.Component {
               <Button size="small" icon="setting" shape="circle-outline" />
             </Dropdown>
           </Col>
+        </Row>
+
+        <Row type="flex" align="middle" style={{ width: '100%' }}>
+          <div id={`alpha-tab-${id}`} style={{ width: '713px' }}></div>
         </Row>
       </List.Item>
     );

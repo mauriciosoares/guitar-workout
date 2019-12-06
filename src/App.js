@@ -12,7 +12,7 @@ const { Content } = Layout;
 class App extends React.Component {
   componentDidMount() {
     new Konami(() => {
-      alert('test');
+      alert('Very curious you are');
     });
   }
   render() {

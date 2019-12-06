@@ -45,13 +45,13 @@ class ManageTrack extends React.Component {
   };
 
   render() {
-    const { closeModal, visible, form } = this.props;
+    const { closeModal, form } = this.props;
     const { getFieldDecorator, getFieldsError } = form;
 
     return (
       <Modal
         title="Create Track"
-        visible={visible}
+        visible
         onCancel={closeModal}
         footer={[
           <Button key="cancel" onClick={closeModal}>

@@ -2,16 +2,11 @@ import React from 'react';
 import { Modal } from 'antd';
 
 export default function HiddenMetronomeSounds(props) {
-  const { visible, closeModal } = props;
+  const { closeModal } = props;
 
   return (
-    <Modal
-      title="Create Track"
-      visible={visible}
-      onCancel={closeModal}
-      onOk={closeModal}
-    >
-      :D
+    <Modal title="Hidden Stuff" onCancel={closeModal} onOk={closeModal}>
+      Something comming here soon!
     </Modal>
   );
 }
